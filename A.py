@@ -117,17 +117,17 @@ st.subheader("🔍 Key Insights")
 
 kpi1, kpi2, kpi3, kpi4, kpi5, kpi6 = st.columns(6)
 
-kpi1.metric("📈 Most Viewed Platform", top_platform_views)
-kpi2.metric("🔥 Most Engaged Platform", top_platform_engagement)
-kpi3.metric("🎥 Most Viewed Content", top_content_views)
-kpi4.metric("💬 Most Engaged Content", top_content_engagement)
-kpi5.metric("💰 Best ROI Platform", best_roi_platform)
-kpi6.metric("⏰ Optimal Posting Hour", f"{optimal_posting_hour}:00")
+kpi1.metric(" Most Viewed Platform", top_platform_views)
+kpi2.metric("Most Engaged Platform", top_platform_engagement)
+kpi3.metric(" Most Viewed Content", top_content_views)
+kpi4.metric(" Most Engaged Content", top_content_engagement)
+kpi5.metric(" Best ROI Platform", best_roi_platform)
+kpi6.metric(" Optimal Posting Hour", f"{optimal_posting_hour}:00")
 
 # ----------------------------
 # Charts
 # ----------------------------
-st.subheader("📊 Visual Analysis")
+st.subheader(" Visual Analysis")
 
 col3, col4 = st.columns(2)
 
@@ -143,12 +143,12 @@ with col4:
         filtered_df.groupby("content_type")["engagement"].sum()
     )
 
-st.write("📉 Average Campaign ROI by Platform")
+st.write(" Average Campaign ROI by Platform")
 st.bar_chart(
     filtered_df.groupby("platform")["roi"].mean()
 )
 
-st.write("⏰ Engagement by Posting Hour")
+st.write(" Engagement by Posting Hour")
 st.bar_chart(
     filtered_df.groupby("hour")["engagement"].mean()
 )
@@ -156,5 +156,5 @@ st.bar_chart(
 # ----------------------------
 # Data table
 # ----------------------------
-with st.expander("📄 View Filtered Data"):
+with st.expander("View Filtered Data"):
     st.dataframe(filtered_df)
